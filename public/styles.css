@@ -271,3 +271,13 @@ body.dark .btn-secondary:hover {
   background-color: #5a6268;
 }
 
+.fixed-icons .position-relative {
+  position: relative;
+}
+
+.fixed-icons .badge {
+  position: absolute;
+  top: 0;
+  start: 100%;
+  transform: translate(-50%, -50%);
+}

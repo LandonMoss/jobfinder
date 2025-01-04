@@ -117,8 +117,23 @@ function scheduleInterview() {
     alert('Interview scheduled successfully!');
     const scheduleInterviewModal = bootstrap.Modal.getInstance(document.getElementById('scheduledInterviewsModal'));
     scheduleInterviewModal.hide();
+    //Updates interview notification
+    updateInterviewNotification();
   } else {
     alert('Please select a date and time for the interview.');
+  }
+}
+
+// Function to update the interview notification badge
+function updateInterviewNotification() {
+  const today = new Date().toISOString().split('T')[0];
+  const todayInterviews = scheduledInterviews.filter(interview => interview.date === today);
+  const notificationBadge = document.getElementById('interviewNotification');
+  if (todayInterviews.length > 0) {
+    notificationBadge.innerText = todayInterviews.length;
+    notificationBadge.style.display = 'inline';
+  } else {
+    notificationBadge.style.display = 'none';
   }
 }
  
