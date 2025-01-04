@@ -95,22 +95,13 @@ function showUploadResumeModal() {
 
 
 
-    //Function to bookmark a job
+
+
+// Function to bookmark a job
 function bookmarkJob(title, company, location, description, salary) {
-  const bookmarkedJobs = document.getElementById('bookmarkedJobs');
-  const jobCard = `
-    <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">${title}</h5>
-          <p class="card-text">${company}</p>
-          <p class="text-muted">${location}</p>
-          <p class="text-muted">Salary: $${salary}</p>
-        </div>
-      </div>
-    </div>
-  `;
-  bookmarkedJobs.innerHTML += jobCard;
+  const job = { title, company, location, description, salary };
+  bookmarkedJobs.push(job);
+  alert('Job bookmarked successfully!');
 }
 
    //function to handle scheduling an interview

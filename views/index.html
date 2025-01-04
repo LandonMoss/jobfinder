@@ -46,7 +46,7 @@
       <form id="searchForm">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Search for jobs" id="searchInput">
-          <button class="btn btn-secondary" type="button" id="searchButton">Search</button>
+          <button class="btn btn-secondary" type="button" button onclick="checkEmpty()" id="searchButton">Search</button>
         </div>
       </form>
     </div>
@@ -144,6 +144,16 @@
 
     });
     });
+    //Error handling for user if no text is placed inside
+      function checkEmpty() {
+    const searchForm = document.getElementById('searchInput');
+    if (searchForm.value == '')
+    {
+      alert("You have to put text in here to find a job!");
+      console.log("Empty search Box!");
+    }
+  }
+
   </script>
 
   
