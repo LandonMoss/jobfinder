@@ -243,3 +243,31 @@ body.dark .btn-secondary:hover {
   font-size: 1.5rem;
 }
 
+
+/* Fixed icons styles */
+.fixed-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fixed-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #6c757d;
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fixed-icons a:hover {
+  background-color: #5a6268;
+}
+
