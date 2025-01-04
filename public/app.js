@@ -11,6 +11,31 @@ function showJobDetails(title, company, location, description, salary ) {
   jobDetailsModal.show();
 
 }
+
+let availableJobs = [
+  { title: 'Software Engineer', company: 'Google', location: 'Mountain View, CA' },
+  { title: 'Product Manager', company: 'Amazon', location: 'Seattle, WA' },
+  { title: 'Data Scientist', company: 'Facebook', location: 'Menlo Park, CA' },
+  { title: 'UX Designer', company: 'Apple', location: 'Cupertino, CA' },
+  { title: 'Backend Developer', company: 'Netflix', location: 'Los Gatos, CA' }
+  // Add more jobs as needed
+];
+
+displayAvailableJobs(availableJobs);
+
+
+// Function to filter jobs by state
+function filterJobsByState() {
+  const stateFilter = document.getElementById('stateFilter').value;
+  const filteredJobs = availableJobs.filter(job => job.location.includes(stateFilter));
+  displayAvailableJobs(filteredJobs);
+}
+
+document.getElementById('stateFilter').addEventListener// Array to store bookmarked jobs
+
+
+
+
 // Example data for bookmarked jobs and scheduled interviews
 let bookmarkedJobs = [
   { title: 'Software Engineer', company: 'Google', location: 'Mountain View, CA' },
@@ -21,6 +46,32 @@ let scheduledInterviews = [
   { title: 'Frontend Developer', company: 'Facebook', date: '2024-05-01' },
   { title: 'Backend Developer', company: 'Netflix', date: '2024-05-03' }
 ];
+
+
+
+// Function to display available jobs
+function displayAvailableJobs(jobs) {
+  const jobList = document.getElementById('jobList');
+  jobList.innerHTML = '';
+  jobs.forEach(job => {
+    const jobElement = document.createElement('div');
+    jobElement.className = 'col-md-4';
+    jobElement.innerHTML = `
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">${job.title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${job.company}</h6>
+          <p class="card-text"><strong>Location:</strong> ${job.location}</p>
+          <p class="card-text"><strong>Description:</strong> ${job.description}</p>
+          <p class="card-text"><strong>Salary:</strong> $${job.salary}</p>
+          <button class="btn btn-primary" onclick="showJobDetails('${job.title}', '${job.company}', '${job.location}', '${job.description}', '${job.salary}')">View Details</button>
+        </div>
+      </div>
+    `;
+    jobList.appendChild(jobElement);
+  });
+}
+
 
 function showScheduleInterviewModal() {
   const scheduleInterviewModal = new bootstrap.Modal(document.getElementById('scheduledInterviewsModal'));
