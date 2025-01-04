@@ -1,0 +1,245 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+    display: flex;
+    margin: 0;
+  }
+  
+  header {
+    background: linear-gradient(45deg, #007bff, #6c63ff);
+  }
+  
+  #jobList .card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  #jobList .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  main {
+    flex: 1;
+  }
+
+  @media only screen and (min-width: 321px) 
+  {
+    footer {
+      position: relative;
+      bottom: 0;
+      text-align: center;
+      width: 100%;
+    }
+    @media only screen and (max-width: 600px) 
+    {
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+  }
+ 
+}
+  }
+  
+  footer {
+    background-color: #212529;
+    color: #ccc;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    clear: both;
+    position: relative;
+  }
+
+
+  /* General styles for the modal */
+.modal-lg {
+  max-width: 80%;
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+#interviewAnswer {
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+#mockInterviewQuestion {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn-warning {
+  padding: 10px;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.chatbot-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.chatbot-body {
+  padding: 10px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.chatbot-footer {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chatbot-footer input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+
+@media screen and (min-width: 321px) {
+  .btn-warning {
+    border-radius: 50%;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .btn-primary {
+   height: auto;
+   display: block;
+   margin: 10px 0;
+  }
+
+  .btn-warning {
+    height: auto;
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+
+
+/* Notification styles */
+.notification {
+  position: absolute;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+
+.notification strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.notification:hover {
+  background-color: #e9ecef;
+}
+
+/* Light theme styles */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light .navbar, body.light footer {
+  background-color: #f8f9fa;
+  color: #000000;
+}
+
+body.light .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+body.light .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Dark theme styles */
+body.dark {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+
+body.dark .navbar, body.dark footer {
+  background-color: #212529;
+  color: #ffffff;
+}make t
+
+body.dark .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+body.dark .btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Toggle button styles */
+#themeToggleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+#themeToggleButton i {
+  font-size: 1.5rem;
+}
+

@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+
+header {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    clear: both;
+}
+
+.card-facebook:hover {
+    background-color: rgba(8, 65, 188, 0.1); /* Facebook blue */
+
+    box-shadow: 0 4px 8px rgba(59, 89, 152, 0.6);
+}
+
+.card-amazon:hover {
+    background-color: rgba(255, 153, 0, 0.1); /* Amazon orange */
+
+    box-shadow: 0 4px 8px rgba(255, 153, 0, 0.6); /* Amazon orange */
+  }
+  
+  .card-netflix:hover {
+    background-color: rgba(229, 9, 20, 0.1); /* Netflix red */
+
+    box-shadow: 0 4px 8px rgba(229, 9, 20, 0.6); /* Netflix red */
+  }
+  
+  .card-google:hover {
+    background-color: rgba(1, 247, 174, 0.1); /* Google blue */
+
+    box-shadow: 0 4px 8px rgba(66, 133, 244, 0.6); /* Google blue */
+  }
+
+@media only screen and (min-width: 321px) {
+    footer {
+        background: #333;
+        color: #fff;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        clear: both;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    footer {
+        background: #333;
+        color: #fff;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+}
+}
+
