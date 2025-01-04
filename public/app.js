@@ -12,18 +12,18 @@ function showJobDetails(title, company, location, description, salary ) {
 
 }
 // Example data for bookmarked jobs and scheduled interviews
-const bookmarkedJobs = [
+let bookmarkedJobs = [
   { title: 'Software Engineer', company: 'Google', location: 'Mountain View, CA' },
   { title: 'Product Manager', company: 'Amazon', location: 'Seattle, WA' }
 ];
 
-const scheduledInterviews = [
+let scheduledInterviews = [
   { title: 'Frontend Developer', company: 'Facebook', date: '2024-05-01' },
   { title: 'Backend Developer', company: 'Netflix', date: '2024-05-03' }
 ];
 
 function showScheduleInterviewModal() {
-  const scheduleInterviewModal = new bootstrap.Modal(document.getElementById('scheduleInterviewModal'));
+  const scheduleInterviewModal = new bootstrap.Modal(document.getElementById('scheduledInterviewsModal'));
   scheduleInterviewModal.show();
 }
 
@@ -104,34 +104,24 @@ function bookmarkJob(title, company, location, description, salary) {
   alert('Job bookmarked successfully!');
 }
 
-   //function to handle scheduling an interview
-   function scheduleInterview() {
-    const date = document.getElementById('interviewDate').value;
-    const time = document.getElementById('interviewTime').value;
-    const company = document.getElementById('modalJobCompany').innerText;
-    if (date && time) {
-      const scheduledInterviews = document.getElementById('scheduledInterviews');
-      const interviewCard = `
-         <div class=col-md-4">
-          <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Interview Scheduled</h5>
-            <p class="card-text">Interview with: ${company}</p>
-            <p class="card-text">Date: ${date}</p>
-            <p class="card-text">Time: ${time}</p>
-          </div>
-        </div>
-      </div>
-         `;
-      scheduledInterviews.innerHTML += interviewCard;
-      const scheduleInterviewModal = bootstrap.Modal.getInstance(document.getElementById('scheduleInterviewModal'));
-      scheduleInterviewModal.hide();
-      //Logic will be added to save scheudled interview to MONGODB
-    } else {
-      alert('Please select a date and time');
-    }
-  }
 
+// Function to schedule an interview
+function scheduleInterview() {
+  const date = document.getElementById('interviewDate').value;
+  const time = document.getElementById('interviewTime').value;
+  const company = document.getElementById('modalJobCompany').innerText;
+  if (date && time) {
+    const interview = { company, date, time };
+    scheduledInterviews.push(interview);
+    displayScheduledInterviews();
+    alert('Interview scheduled successfully!');
+    const scheduleInterviewModal = bootstrap.Modal.getInstance(document.getElementById('scheduledInterviewsModal'));
+    scheduleInterviewModal.hide();
+  } else {
+    alert('Please select a date and time for the interview.');
+  }
+}
+ 
   // Event listeners for modals
 document.getElementById('bookmarkedJobsModal').addEventListener('show.bs.modal', displayBookmarkedJobs);
 document.getElementById('scheduledInterviewsModal').addEventListener('show.bs.modal', displayScheduledInterviews);
@@ -142,23 +132,24 @@ function displayScheduledInterviews() {
   const scheduledInterviewsContainer = document.getElementById('scheduledInterviews');
   scheduledInterviewsContainer.innerHTML = '';
   if (Array.isArray(scheduledInterviews)) {
-  scheduledInterviews.forEach(interview => {
-    const interviewElement = document.createElement('div');
-    interviewElement.className = 'col-md-4';
-    interviewElement.innerHTML = `
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">${interview.title}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${interview.company}</h6>
-          <p class="card-text"><strong>Date:</strong> ${interview.date}</p>
+    scheduledInterviews.forEach(interview => {
+      const interviewElement = document.createElement('div');
+      interviewElement.className = 'col-md-4';
+      interviewElement.innerHTML = `
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Interview Scheduled</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${interview.company}</h6>
+            <p class="card-text"><strong>Date:</strong> ${interview.date}</p>
+            <p class="card-text"><strong>Time:</strong> ${interview.time}</p>
+          </div>
         </div>
-      </div>
-    `;
-    scheduledInterviewsContainer.appendChild(interviewElement);
-  });
-} else {
-  console.error('Scheduled interviews is not an array');
-}
+      `;
+      scheduledInterviewsContainer.appendChild(interviewElement);
+    });
+  } else {
+    console.error('Scheduled interviews is not an array');
+  }
 }
 
 // Function to display bookmarked jobs

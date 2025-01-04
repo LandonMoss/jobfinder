@@ -229,8 +229,9 @@
 
 
   
-<!-- Scheduled Interviews Modal -->
-<div class="modal fade" id="scheduledInterviewsModal" tabindex="-1" aria-labelledby="scheduledInterviewsModalLabel" aria-hidden="true">
+
+  <!-- Scheduled Interviews Modal -->
+  <div class="modal fade" id="scheduledInterviewsModal" tabindex="-1" aria-labelledby="scheduledInterviewsModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -238,14 +239,24 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div id="scheduledInterviews" class="row">
+          <form id="scheduleInterviewForm">
+            <div class="mb-3">
+              <label for="interviewDate" class="form-label">Date</label>
+              <input type="date" class="form-control" id="interviewDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="interviewTime" class="form-label">Time</label>
+              <input type="time" class="form-control" id="interviewTime" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="scheduleInterview()">Schedule Interview</button>
+          </form>
+          <div id="scheduledInterviews" class="row mt-4">
             <!-- Scheduled interviews will be dynamically inserted here -->
           </div>
         </div>
       </div>
     </div>
   </div>
-
   
   <!-- Fixed Icons -->
   <div class="fixed-icons">
