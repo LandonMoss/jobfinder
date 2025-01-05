@@ -155,11 +155,48 @@ html, body {
    margin: 10px 0;
   }
 
-  .btn-warning {
-    height: auto;
-    display: block;
-    margin: 10px 0;
-  }
+}
+/* Bookmark button styles */
+.btn-bookmark {
+  background-color: transparent;
+  border: none;
+  color: #ff6347;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.btn-bookmark.active {
+  color: #ff4500;
+}
+
+.btn-bookmark:hover {
+  color: #ff4500;
+  transform: scale(1.2);
+}
+
+.btn-bookmark i {
+  font-size: 1.5rem;
+}
+
+/* Bookmark icon styles */
+.btn-bookmark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #ff6347;
+  transform: translateX(-50%);
+  transition: border-bottom-color 0.3s;
+}
+
+.btn-bookmark:hover::before {
+  border-bottom-color: #ff4500;
 }
 
 

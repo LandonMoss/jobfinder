@@ -57,7 +57,7 @@ function displayAvailableJobs(jobs) {
     const jobElement = document.createElement('div');
     jobElement.className = 'col-md-4';
     jobElement.innerHTML = `
-      <div class="card">
+       <div class="card">
         <div class="card-body">
           <h5 class="card-title">${job.title}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${job.company}</h6>
@@ -65,6 +65,9 @@ function displayAvailableJobs(jobs) {
           <p class="card-text"><strong>Description:</strong> ${job.description}</p>
           <p class="card-text"><strong>Salary:</strong> $${job.salary}</p>
           <button class="btn btn-primary" onclick="showJobDetails('${job.title}', '${job.company}', '${job.location}', '${job.description}', '${job.salary}')">View Details</button>
+          <button class="btn-bookmark" onclick="bookmarkJob('${job.title}', '${job.company}', '${job.location}', '${job.description}', '${job.salary}')">
+            <i class="fas fa-bookmark"></i>
+          </button>
         </div>
       </div>
     `;
@@ -303,7 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
                       <p class="text-muted">Salary: $${job.salary}</p>
                      <button class="btn btn-primary" onclick="showJobDetails('${job.title}', '${job.company}', '${job.location}', '${job.description}', ${job.salary})">View Details</button>
                       <button class="btn btn-secondary" onclick="showScheduleInterviewModal()">Schedule Interview</button>
-                     <button class="btn btn-warning" onclick="bookmarkJob('${job.title}', '${job.company}', '${job.location}', '${job.description}', ${job.salary})">Tag</button>
+                     <button class="btn fa-bookmark" onclick="bookmarkJob('${job.title}', '${job.company}', '${job.location}', '${job.description}', ${job.salary})">Tag</button>
+                  
 
 
 
