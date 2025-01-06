@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 require('dotenv').config();
+const User = require('./models/User');
+
 
 const jobRoutes = require('./routes/JobRoutes');
 //const authRoutes = require('./routes/auth');
