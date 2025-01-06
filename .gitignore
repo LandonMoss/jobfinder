@@ -1,3 +1,4 @@
 #Enviroment Variables
 .env
 tests/app.test.js
+node_modules/
