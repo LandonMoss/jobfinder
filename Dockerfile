@@ -1,5 +1,5 @@
 #Node.js base image
-FROM node:14
+FROM node:16
 
 #Working directory
 WORKDIR /app
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 #Define commmand to run the application
-CMD ["node", "testConnection.js"]
+CMD ["node", "server.js"]
