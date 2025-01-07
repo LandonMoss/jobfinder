@@ -393,3 +393,18 @@ body.dark-theme .card .card-text,
 body.dark-theme .card .card-text strong {
   color: #f8f9fa !important;
 }
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  body.dark-theme .card .card-title,
+  body.dark-theme .card .card-subtitle,
+  body.dark-theme .card .card-text,
+  body.dark-theme .card .card-text strong {
+    color: #f8f9fa !important;
+  }
+
+  body.dark-theme .icon,
+  body.dark-theme .fa {
+    color: #f8f9fa !important;
+  }
+}
