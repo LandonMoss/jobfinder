@@ -22,17 +22,14 @@ html, body {
     flex: 1;
   }
 
-  @media only screen and (min-width: 150px) 
+  @media only screen and (min-width: 321px) 
   {
     footer {
       position: relative;
       bottom: 0;
       text-align: center;
       width: 100%;
-    }
-    span.slider.round {
-      display: none;
-      
+    } 
     }
 
     @media only screen and (max-width: 600px) 
@@ -43,8 +40,7 @@ html, body {
         width: 100%;
   }
  
-}
-  }
+    }
   
   footer {
     background-color: #212529;
@@ -340,11 +336,10 @@ input:checked + .slider:after {
 .fixed-icons .badge {
   position: absolute;
   top: 0;
-  start: 100%;
+ /* start: 100%; */
   transform: translate(-50%, -50%);
 }
 
-body.light-theme .job-card-title,
 body.light-theme .company-name,
 body.light-theme .navbar-nav .nav-link {
   color: #212529;
@@ -354,4 +349,47 @@ body.dark-theme .job-card-title,
 body.dark-theme .company-name,
 body.dark-theme .navbar-nav .nav-link {
   color: #f8f9fa;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+body.dark-theme .card {
+  background-color: #333;
+  border-color: #444;
+}
+
+/* Ensure text visibility for card elements */
+body.light-theme .card .card-title,
+body.light-theme .card .card-subtitle,
+body.light-theme .card .card-text,
+body.light-theme .card .card-text strong {
+  color: #212529;
+}
+
+body.dark-theme .card .card-title,
+body.dark-theme .card .card-subtitle,
+body.dark-theme .card .card-text,
+body.dark-theme .card .card-text strong {
+  color: #f8f9fa;
+}
+
+/* Additional styles for better visibility */
+body.light-theme .card .card-title,
+body.light-theme .card .card-subtitle,
+body.light-theme .card .card-text,
+body.light-theme .card .card-text strong {
+  color: #212529 !important;
+}
+
+body.dark-theme .card .card-title,
+body.dark-theme .card .card-subtitle,
+body.dark-theme .card .card-text,
+body.dark-theme .card .card-text strong {
+  color: #f8f9fa !important;
 }
