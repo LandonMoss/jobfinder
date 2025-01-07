@@ -4,6 +4,7 @@ const path = require('path');
 const cors = require('cors');
 require('dotenv').config();
 const User = require('./models/User');
+const feedbackRoutes = require('./routes/FeedbackRoutes');
 
 
 const jobRoutes = require('./routes/JobRoutes');
@@ -79,6 +80,7 @@ mongoose.set('debug', true);
 
 // Routes
 app.use('/api/jobs', jobRoutes);
+app.use('/api/feedback', feedbackRoutes);
 //app.use('/api/auth', authRoutes);
 //app.use('/api/upload', uploadRoutes);
 
