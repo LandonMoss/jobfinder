@@ -22,7 +22,7 @@ html, body {
     flex: 1;
   }
 
-  @media only screen and (min-width: 321px) 
+  @media only screen and (min-width: 150px) 
   {
     footer {
       position: relative;
@@ -30,6 +30,11 @@ html, body {
       text-align: center;
       width: 100%;
     }
+    span.slider.round {
+      display: none;
+      
+    }
+
     @media only screen and (max-width: 600px) 
     {
       footer {
